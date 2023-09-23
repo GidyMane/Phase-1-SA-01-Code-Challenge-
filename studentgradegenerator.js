@@ -25,3 +25,5 @@ function studentGradeGenerator(){
 
 
 } 
+console.log(studentGradeGenerator(14))
+
