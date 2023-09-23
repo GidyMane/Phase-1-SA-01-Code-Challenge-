@@ -13,7 +13,9 @@ function speedDetector(speed){
         if (demeritPoints > 12 ){
             return "License suspended"
         };
+        return demeritPoints
     }
 
 
 }
+console.log(speedDetector(50))

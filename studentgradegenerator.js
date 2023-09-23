@@ -3,7 +3,7 @@ function studentGradeGenerator(){
    
     const marks = parseInt(prompt("Enter student's marks (0-100):"));
     // conditions
-    if (marks > 79){
+    if (marks > 79 && mark <=100){
         return "A"
     }
     else if(marks>=60 && marks<=79){
@@ -15,7 +15,7 @@ function studentGradeGenerator(){
     else if(marks>=40 && marks <=49){
         return "D"
     }
-    else if(marks<40){
+    else if(marks<40 && marks>=0){
         return "E"
     }
     else {
@@ -25,5 +25,5 @@ function studentGradeGenerator(){
 
 
 } 
-console.log(studentGradeGenerator(14))
+console.log(studentGradeGenerator())
 
