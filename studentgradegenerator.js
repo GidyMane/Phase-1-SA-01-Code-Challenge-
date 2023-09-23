@@ -18,6 +18,7 @@ function studentGradeGenerator(){
         return "E"
     }
     else {
+        // adding alert
         alert("Invalid input! Please enter a number between 0 and 100.")
     }
 
