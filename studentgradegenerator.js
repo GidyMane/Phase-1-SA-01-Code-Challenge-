@@ -1,7 +1,7 @@
 
 function studentGradeGenerator(){
    
-    var marks = parseInt(prompt("Enter student's marks (0-100):"));
+    const marks = parseInt(prompt("Enter student's marks (0-100):"));
     // conditions
     if (marks > 79){
         return "A"
