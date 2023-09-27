@@ -1,29 +1,46 @@
+// import my prompt method to allow node to ask for input
+const prompt = require('prompt-sync')({sigint: true});
 
-function studentGradeGenerator(){
-   
-    const marks = parseInt(prompt("Enter student's marks (0-100):"));
-    // conditions
-    if (marks > 79 && mark <=100){
-        return "A"
+// create a function that returns grade based on the grade number
+const gradeGenerator = (number)=>{
+    // declare our constant grades and our result
+    const grades=["A", "B", "C", "D", "E"] 
+    let result;
+
+    // dynamically return a result which is A||B||C||D||E 
+    if(number > 79){
+        result= grades[0];
+    }else if(number >= 60 && number <= 79){
+        result= grades[1]
+    }else if(number > 49 && number <= 59){
+        result= grades[2]
+    }else if(number >= 40 && number <= 49){
+        result= grades[3];
+    }else{
+        result= grades[4]
     }
-    else if(marks>=60 && marks<=79){
-        return "B"
-    }
-    else if(marks>=50 && marks<=59){
-        return "c"
-    }
-    else if(marks>=40 && marks <=49){
-        return "D"
-    }
-    else if(marks<40 && marks>=0){
-        return "E"
-    }
-    else {
-        // adding alert
-        alert("Invalid input! Please enter a number between 0 and 100.")
+    // return our final grade
+    return result;
+}
+
+// create variable that wll store my input
+let gradeNumber;
+
+// create a while loop to prompt user for a number.Breaks if the user inputs a number otherwise, it continues
+while(true){
+    gradeNumber= parseInt(prompt("Enter a number in the range 0-100: "));
+    
+    // verify if input is actually a number, lies in the range 0-100 and the number is a positive value
+    if(Number.isInteger(gradeNumber) && gradeNumber <= 100 && gradeNumber >= 0){
+        break;
     }
 
+}
 
-} 
-console.log(studentGradeGenerator())
 
+
+// finally get our grade from the gradegenerator function
+let mygrade=gradeGenerator(gradeNumber);
+
+// print my result
+console.log(`Your grade is ${mygrade}`);
